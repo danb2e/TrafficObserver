@@ -1,0 +1,19 @@
+﻿<shell:ViewBaseUserControl x:Class="TrafficObserver.View.MainView"
+             x:TypeArguments="shell:ViewModelBase"
+             xmlns:shell="clr-namespace:IotechiCore.WPF.Mvvm;assembly=IotechiCore"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrafficObserver.View"
+             xmlns:view ="clr-namespace:TrafficObserver.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid x:Name="GridCanvas" Margin="0,0,0,0" SizeChanged="GridCanvas_SizeChanged">
+        <Canvas x:Name="MainCanvas" Width="Auto" Height="Auto" MouseLeftButtonDown="MainCanvas_MouseLeftButtonDown" MouseMove="MainCanvas_MouseMove" MouseLeftButtonUp="MainCanvas_MouseLeftButtonUp" PreviewMouseMove="MainCanvas_PreviewMouseMove">
+            <Canvas.Background>
+                <ImageBrush ImageSource="{Binding ImgName}" Changed="ImageBrush_Changed"/>
+            </Canvas.Background>
+        </Canvas>
+    </Grid>
+</shell:ViewBaseUserControl>
