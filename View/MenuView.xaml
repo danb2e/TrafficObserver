@@ -18,21 +18,30 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.01*"/>
         </Grid.ColumnDefinitions>
-        <WrapPanel HorizontalAlignment="Right" Grid.Column="0">
-            <Button>
-                <Button.Content>
-                    <Image Source="{Binding MinimizeToWindow}"/>
-                </Button.Content>
+        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0">
+            <Button Width="30" Height="20">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Image/Top/nor_minimize.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource styleToWindowTop}"/>
+                </Button.Style>
             </Button>
-            <Button>
-                <Button.Content>
-                    <Image Source="{Binding ShrinkToWindow}"/>
-                </Button.Content>
+            <Button Width="30" Height="20">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Image/Top/nor_shrink.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource styleToWindowTop}"/>
+                </Button.Style>
             </Button>
-            <Button>
-                <Button.Content>
-                    <Image Source="{Binding CloseToWindow}"/>
-                </Button.Content>
+            <Button Width="30" Height="20">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Image/Top/nor_Close.png"/>
+                </Button.Background>
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource styleToWindowTop}"/>
+            </Button.Style>
             </Button>
         </WrapPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">

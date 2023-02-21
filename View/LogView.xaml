@@ -1,5 +1,5 @@
 ﻿<shell:ViewBaseUserControl
-x:TypeArguments="shell:ViewModelBase"
+      x:TypeArguments="shell:ViewModelBase"
       xmlns:shell="clr-namespace:IotechiCore.WPF.Mvvm;assembly=IotechiCore"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,8 +8,7 @@ x:TypeArguments="shell:ViewModelBase"
       xmlns:local="clr-namespace:TrafficObserver.View"
       xmlns:igWPF="http://schemas.infragistics.com/xaml/wpf" x:Class="TrafficObserver.View.LogView"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      >
+      d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid >
         <igWPF:XamDataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataSource="{Binding LogList}" IsSynchronizedWithCurrentItem="True" >

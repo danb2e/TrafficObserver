@@ -5,11 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local ="clr-namespace:TrafficObserver"
         xmlns:view ="clr-namespace:TrafficObserver.View"
-        mc:Ignorable="d"
+        mc:Ignorable="d"  WindowStyle="None"
         Title="Traffic Observer" Height="820" Width="1280" Closing="Window_Closing">
-    <Window.Resources>
-        <ResourceDictionary Source="Themes/TopButtonStyle.xaml"/>
-    </Window.Resources>
     <Grid Background="White" Margin="0,0,0,-17">
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*"/>
@@ -19,7 +16,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <view:MenuView Margin="0,0,0,0" Width="NaN" />
+        <view:MenuView Margin="0,0,0,0" Width="NaN"/>
+
         <view:MainView Grid.Row="1" Grid.RowSpan="2" Width="NaN" Height="NaN"/>
         <view:LogView Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" Grid.RowSpan="2"/>
     </Grid>
