@@ -230,38 +230,5 @@ namespace TrafficObserver.View
                 handler(this, new PropertyChangedEventArgs(info));
             }
         }
-
-      //  private Uri minimize = new Uri("../Image/Top/mo_minimize.png");
-        static BitmapImage minimizeToWindow = new BitmapImage(new Uri("../../../Image/Top/nor_minimize.png", UriKind.Relative));
-        static BitmapImage shrinkToWindow = new BitmapImage(new Uri("../../../Image/Top/nor_shrink.png", UriKind.Relative));
-        static BitmapImage closeToWindow = new BitmapImage(new Uri("../../../Image/Top/nor_Close.png", UriKind.Relative));
-
-        public BitmapImage MinimizeToWindow
-        {
-            get { return minimizeToWindow; }
-            set
-            {
-                minimizeToWindow = value;
-                OnPropertyChanged("MinimizeToWindow");
-            }
-        }
-        public BitmapImage ShrinkToWindow
-        {
-            get { return shrinkToWindow; }
-            set
-            {
-                shrinkToWindow = value;
-                OnPropertyChanged("ShrinkToWindow");
-            }
-        }
-        public BitmapImage CloseToWindow
-        {
-            get { return closeToWindow; }
-            set
-            {
-                closeToWindow = value;
-                OnPropertyChanged("CloseToWindow");
-            }
-        }
     }
 }

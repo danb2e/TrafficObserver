@@ -5,6 +5,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:TrafficObserver.View"
              xmlns:view ="clr-namespace:TrafficObserver.View"
              d:DataContext="{d:DesignInstance Type=local:MenuViewModel}"
@@ -18,30 +19,12 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.01*"/>
         </Grid.ColumnDefinitions>
-        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0">
-            <Button Width="30" Height="20">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Image/Top/nor_minimize.png"/>
-                </Button.Background>
-                <Button.Style>
-                    <Style TargetType="Button" BasedOn="{StaticResource styleToWindowTop}"/>
-                </Button.Style>
+        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0">
+            <Button Width="30" Height="20" Style="{StaticResource minimizeStyle}">
             </Button>
-            <Button Width="30" Height="20">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Image/Top/nor_shrink.png"/>
-                </Button.Background>
-                <Button.Style>
-                    <Style TargetType="Button" BasedOn="{StaticResource styleToWindowTop}"/>
-                </Button.Style>
+            <Button Width="30" Height="20" Style="{StaticResource shrinkStyle}">
             </Button>
-            <Button Width="30" Height="20">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Image/Top/nor_Close.png"/>
-                </Button.Background>
-            <Button.Style>
-                <Style TargetType="Button" BasedOn="{StaticResource styleToWindowTop}"/>
-            </Button.Style>
+            <Button Width="30" Height="20" Style="{StaticResource closeStyle}">
             </Button>
         </WrapPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">

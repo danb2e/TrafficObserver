@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibImageProcessing", "LibIm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLogLib", "EventLogLib\EventLogLib.csproj", "{C609AD24-13F3-49B1-BFDB-E6856644CF7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficObserver.UI", "..\TrafficObserver.UI\TrafficObserver.UI.csproj", "{162135A9-F013-4E66-BABD-4F85C1307D6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,14 @@ Global
 		{C609AD24-13F3-49B1-BFDB-E6856644CF7F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C609AD24-13F3-49B1-BFDB-E6856644CF7F}.Release|x64.ActiveCfg = Release|Any CPU
 		{C609AD24-13F3-49B1-BFDB-E6856644CF7F}.Release|x64.Build.0 = Release|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Debug|x64.Build.0 = Debug|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Release|x64.ActiveCfg = Release|Any CPU
+		{162135A9-F013-4E66-BABD-4F85C1307D6B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
