@@ -6,13 +6,13 @@
         xmlns:local ="clr-namespace:TrafficObserver"
         xmlns:view ="clr-namespace:TrafficObserver.View"
         mc:Ignorable="d"  WindowStyle="None" ResizeMode="NoResize"
-        Title="Traffic Observer" Height="820" Width="1280" Closing="Window_Closing" >
+        Title="Traffic Observer" Height="1080" Width="1920" Closing="Window_Closing" WindowStartupLocation="CenterScreen" >
     <Grid Background="White" Margin="0,0,0,0">
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="129"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>

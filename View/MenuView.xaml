@@ -9,11 +9,11 @@
              xmlns:local="clr-namespace:TrafficObserver.View"
              xmlns:view ="clr-namespace:TrafficObserver.View"
              d:DataContext="{d:DesignInstance Type=local:MenuViewModel}"
-             mc:Ignorable="d" Height="80" Width="1280">
-    <Grid Background="LightGray" Margin="0,0,0,0">
+             mc:Ignorable="d" Height="129" Width="1920">
+    <Grid Style="{StaticResource topBg}" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -28,40 +28,66 @@
             </Button>
         </WrapPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
-            <GroupBox Header="파일 열기 및 시작" HorizontalAlignment="Left">
+
+            <GroupBox Header="파일 열기 및 시작" Width="170">
+                <GroupBox.Style>
+                    <Style TargetType="GroupBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="GroupBox">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="파일 열기 및 시작"/>
+                                        <Button Grid.Column="0" Grid.Row="2" Content="검출 시작" VerticalAlignment="Top" Margin="5,0,5,0" Height="25" Width="70" Command="{Binding StartPauseTrajactory}"/>
+                                        <Button Grid.Column="1" Grid.Row="2" Content="영상 위치" VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="70" Command="{Binding OpenVideo}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </GroupBox.Style>
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="검출 시작" VerticalAlignment="Top" Margin="5,0,5,0" Height="25" Width="60" Command="{Binding StartPauseTrajactory}"/>
-                    <Button Content="영상 위치" VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="60" Command="{Binding OpenVideo}"/>
+                    <Button Content="검출 시작" VerticalAlignment="Top" Margin="5,0,5,0" Height="25" Width="70" Command="{Binding StartPauseTrajactory}"/>
+                    <Button Content="영상 위치" VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="70" Command="{Binding OpenVideo}"/>
                 </StackPanel>
             </GroupBox>
-            <GroupBox Header="YOLO 설정 열기" HorizontalAlignment="Left">
+            <GroupBox Header="YOLO 설정 열기" HorizontalAlignment="Left" >
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="가중치" VerticalAlignment="Top" Margin="5,0,5,0" Height="25" Width="50" Command="{Binding OpenWeight}"/>
-                    <Button Content="네트워크 설정" VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="80" Command="{Binding OpenConfig}"/>
-                    <Button Content="객체명 설정" VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="75" Command="{Binding OpenName}"/>
+                    <Button VerticalAlignment="Top" Margin="5,0,5,0" Height="25" Width="80" Command="{Binding OpenWeight}" Style="{StaticResource btnStateStyle1}"/>
+                    <Button VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="110" Command="{Binding OpenConfig}" Style="{StaticResource btnStateStyle2}"/>
+                    <Button VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="100" Command="{Binding OpenName}" Style="{StaticResource btnStateStyle3}"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="GCP 추가 및 좌표 변경">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="GCP 추가" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding AddGCP}"/>
-                    <Button Content="UTM좌표 변경" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="85" Command="{Binding EditGCP}"/>
-                    <Button Content="점 이동" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="50" Command="{Binding MoveGCP}"/>
-                    <Button Content="점 삭제" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="50" Command="{Binding DeleteGCP}"/>
+                    <Button Content="GCP 추가" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="70" Command="{Binding AddGCP}"/>
+                    <Button Content="UTM좌표 변경" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="95" Command="{Binding EditGCP}"/>
+                    <Button Content="점 이동" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding MoveGCP}"/>
+                    <Button Content="점 삭제" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding DeleteGCP}"/>
                 </StackPanel>                
             </GroupBox>
             <GroupBox Header="차로 및 차선 설정">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="{Binding TextSelectedTrack}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="110" Command="{Binding SelectTrack}"/>
-                    <Button Content="통행로 추가" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="70" Command="{Binding AddTrack}"/>
-                    <Button Content="{Binding TextAddPoint}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="95" Command="{Binding AddPoint}"/>
-                    <Button Content="점 이동" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="50" Command="{Binding MovePoint}"/>
-                    <Button Content="점 삭제" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="50" Command="{Binding DeletePoint}"/>
+                    <Button Content="{Binding TextSelectedTrack}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="120" Command="{Binding SelectTrack}"/>
+                    <Button Content="통행로 추가" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="80" Command="{Binding AddTrack}"/>
+                    <Button Content="{Binding TextAddPoint}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="105" Command="{Binding AddPoint}"/>
+                    <Button Content="점 이동" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding MovePoint}"/>
+                    <Button Content="점 삭제" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding DeletePoint}"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="GCP 및 차선 설정">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="설정 저장" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding SavePoints}"/>
-                    <Button Content="설정 불러오기" HorizontalAlignment="Left" Margin="0,0,5,0" VerticalAlignment="Top" Height="25" Width="80" Command="{Binding LoadPoints}"/>
+                   <Button Content="설정 저장" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="70" Command="{Binding SavePoints}"/>
+                   <Button Content="설정 불러오기" HorizontalAlignment="Left" Margin="0,0,5,0" VerticalAlignment="Top" Height="25" Width="90" Command="{Binding LoadPoints}"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
