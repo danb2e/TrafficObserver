@@ -20,6 +20,19 @@ namespace TrafficObserver.View
         public LogViewModel()
         {
             LogList = new ObservableList<EventLogParam>();
+            // 데이터 추가되었을때 테스트 하기위해 임의로 추가한 곳
+            EventLogParam ev = new EventLogParam();
+            ev.RunType = "검출";
+            ev.EventTime = DateTime.Now;
+            ev.EventTimeStr = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            ev.LogLevel = 0;
+            ev.Message = "검출 시작";
+
+            for (int i = 0; i < 5; i++)
+            {
+                LogList.Add(ev);
+            }
+            // -- end.
             EventLogColleague = new RoutedIotechiCoreColleague<EventLogParam>(
                 SystemLogProvider.Instance().LogName, "LogViewModel", EventLogMediator.Instance(), EventLogWrite);
         }

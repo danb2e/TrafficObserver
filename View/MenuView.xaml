@@ -17,26 +17,29 @@
             <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.22*"/>
+            <ColumnDefinition Width="0.45*"/>
+            <ColumnDefinition Width="0.33*"/>
             <ColumnDefinition Width="0.085*"/>
             <ColumnDefinition Width="0.015*"/>
             <ColumnDefinition Width="0.31*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition Width="0.01*"/>
         </Grid.ColumnDefinitions>
-        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{DynamicResource Top_logo}" Width="60"  HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-        <Image Grid.Row="1" Grid.Column="3" Source="{DynamicResource Top_titleG}" Width="240"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Image Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" Source="{DynamicResource Top_logo}" Width="60"  HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Image Grid.Row="1" Grid.Column="5" Source="{DynamicResource Top_titleG}" Width="240"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <GroupBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Header="파일열기 및 시작" Width="170" Style="{StaticResource groupBox1}"/>
+        <GroupBox Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Header="설정 열기" HorizontalAlignment="Left" Width="330" Style="{StaticResource groupBox2}"/>
+        <GroupBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Header="GCP 및 차선 설정" HorizontalAlignment="Left" Width="200" Style="{StaticResource groupBox5}"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <GroupBox Header="파일열기 및 시작" Width="170" Style="{StaticResource groupBox1}"/>
-            <WrapPanel Style="{StaticResource topLineStyle}" Width="2" Height="65"/>
-            <GroupBox Header="YOLO 설정 열기" HorizontalAlignment="Left" Style="{StaticResource groupBox2}"/>
-            <WrapPanel Style="{StaticResource topLineStyle}" Width="2" Height="65"/>
-            <GroupBox Header="GCP 추가 및 좌표 변경" Style="{StaticResource groupBox3}"/>
+            <Image Source="{DynamicResource Top_line}" Margin="7" Height="65"/>
+            <Image Source="{DynamicResource Top_line}" Margin="7" Height="65"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center">
-            <GroupBox Header="차로 및 차선 설정" Style="{StaticResource groupBox4}"/>
-            <WrapPanel Style="{StaticResource topLineStyle}" Width="2" Height="65"/>
-            <GroupBox Header="GCP 및 차선 설정" Style="{StaticResource groupBox5}"/>
+        <GroupBox Grid.Row="1" Grid.Column="6" Grid.RowSpan="2" Header="차로 및 차선 설정" Style="{StaticResource groupBox4}"/>
+        <GroupBox Grid.Row="1" Grid.Column="7" Grid.RowSpan="2" Header="GCP 추가 및 좌표 변경" Style="{StaticResource groupBox3}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center">
+            <Image Source="{DynamicResource Top_line}" Margin="7" Height="65"/>
         </StackPanel>
     </Grid>
 </shell:ViewBaseUserControl>
