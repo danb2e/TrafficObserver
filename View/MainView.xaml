@@ -15,5 +15,7 @@
                 <ImageBrush ImageSource="{Binding ImgName}" Changed="ImageBrush_Changed"/>
             </Canvas.Background>
         </Canvas>
+        <Image Source="{DynamicResource Top_down}" VerticalAlignment="Top" HorizontalAlignment="Center" Width="300"/>
+        <Image Source="{DynamicResource Bottom_down}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="300"/>
     </Grid>
 </shell:ViewBaseUserControl>

@@ -29,5 +29,27 @@ namespace TrafficObserver
         {
             Mediator.Mediator.Instance().Distribute("ProgramExit", 0);
         }
+
+        private void Window_minimize(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        private void Window_shrink(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            ResizeMode = ResizeMode.NoResize;
+        }
+        private void Window_close(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).Close();
+        }
+
+        private void RowDefinition_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+       //     if (e.LeftButton == MouseButtonState.Pressed)
+       //     {
+                this.DragMove();
+       //     }
+        }
     }
 }

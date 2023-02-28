@@ -14,47 +14,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.085*"/>
+            <ColumnDefinition Width="0.015*"/>
+            <ColumnDefinition Width="0.31*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.01*"/>
         </Grid.ColumnDefinitions>
-        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0">
-            <Button Width="30" Height="20" Style="{StaticResource minimizeStyle}">
-            </Button>
-            <Button Width="30" Height="20" Style="{StaticResource shrinkStyle}">
-            </Button>
-            <Button Width="30" Height="20" Style="{StaticResource closeStyle}">
-            </Button>
-        </WrapPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
-
-            <GroupBox Header="파일열기 및 시작" Width="170" Style="{StaticResource groupbox1}">
-                <StackPanel Orientation="Horizontal">
-                    <Button Content="검출 시작" VerticalAlignment="Top" Margin="5,0,5,0" Height="25" Width="70" Command="{Binding StartPauseTrajactory}"/>
-                    <Button Content="영상 위치" VerticalAlignment="Top" Margin="0,0,5,0" Height="25" Width="70" Command="{Binding OpenVideo}"/>
-                </StackPanel>
-            </GroupBox>
+        <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Source="{DynamicResource Top_logo}" Width="60"  HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Image Grid.Row="1" Grid.Column="3" Source="{DynamicResource Top_titleG}" Width="240"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <GroupBox Header="파일열기 및 시작" Width="170" Style="{StaticResource groupBox1}"/>
             <WrapPanel Style="{StaticResource topLineStyle}" Width="2" Height="65"/>
-            <GroupBox Header="YOLO 설정 열기" HorizontalAlignment="Left" Style="{StaticResource groupbox2}"/>
-
+            <GroupBox Header="YOLO 설정 열기" HorizontalAlignment="Left" Style="{StaticResource groupBox2}"/>
             <WrapPanel Style="{StaticResource topLineStyle}" Width="2" Height="65"/>
-            <GroupBox Header="GCP 추가 및 좌표 변경" Style="{StaticResource groupbox3}"/>
-            <GroupBox Header="차로 및 차선 설정">
-                <StackPanel Orientation="Horizontal">
-                    <Button Content="{Binding TextSelectedTrack}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="120" Command="{Binding SelectTrack}"/>
-                    <Button Content="통행로 추가" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="80" Command="{Binding AddTrack}"/>
-                    <Button Content="{Binding TextAddPoint}" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="105" Command="{Binding AddPoint}"/>
-                    <Button Content="점 이동" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding MovePoint}"/>
-                    <Button Content="점 삭제" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="60" Command="{Binding DeletePoint}"/>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Header="GCP 및 차선 설정">
-                <StackPanel Orientation="Horizontal">
-                   <Button Content="설정 저장" HorizontalAlignment="Left" Margin="5,0,5,0" VerticalAlignment="Top" Height="25" Width="70" Command="{Binding SavePoints}"/>
-                   <Button Content="설정 불러오기" HorizontalAlignment="Left" Margin="0,0,5,0" VerticalAlignment="Top" Height="25" Width="90" Command="{Binding LoadPoints}"/>
-                </StackPanel>
-            </GroupBox>
+            <GroupBox Header="GCP 추가 및 좌표 변경" Style="{StaticResource groupBox3}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center">
+            <GroupBox Header="차로 및 차선 설정" Style="{StaticResource groupBox4}"/>
+            <WrapPanel Style="{StaticResource topLineStyle}" Width="2" Height="65"/>
+            <GroupBox Header="GCP 및 차선 설정" Style="{StaticResource groupBox5}"/>
         </StackPanel>
     </Grid>
 </shell:ViewBaseUserControl>

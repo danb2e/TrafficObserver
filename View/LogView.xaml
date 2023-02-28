@@ -11,7 +11,7 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid >
-        <igWPF:XamDataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataSource="{Binding LogList}" IsSynchronizedWithCurrentItem="True" >
+        <igWPF:XamDataGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DataSource="{Binding LogList}" IsSynchronizedWithCurrentItem="True">
             <igWPF:XamDataGrid.FieldSettings>
                 <igWPF:FieldSettings AllowEdit="false"/>
             </igWPF:XamDataGrid.FieldSettings>
