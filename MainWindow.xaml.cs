@@ -36,19 +36,33 @@ namespace TrafficObserver
         }
         private void Window_shrink(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-            ResizeMode = ResizeMode.NoResize;
+            if (WindowState == WindowState.Maximized)
+            {
+                this.MaxWidth = 1920;
+                this.MaxHeight = 1080;
+                WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
+                this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            //    WindowState = WindowState.Maximized;
+            }
         }
         private void Window_close(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).Close();
         }
 
-        private void RowDefinition_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Window_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if(e.ClickCount == 1)
             {
                 this.DragMove();
+            }
+            else if (e.ClickCount == 2)
+            {
+                Window_shrink(sender, e);
             }
         }
     }

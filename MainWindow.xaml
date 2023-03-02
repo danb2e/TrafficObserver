@@ -5,10 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local ="clr-namespace:TrafficObserver"
         xmlns:view ="clr-namespace:TrafficObserver.View"
-        mc:Ignorable="d"  WindowStyle="None" ResizeMode="NoResize"
-        Title="Traffic Observer" Height="1080" Width="1920" Closing="Window_Closing" WindowStartupLocation="CenterScreen"
-        MouseDown="RowDefinition_MouseDown"
-        >
+        mc:Ignorable="d"
+        MinWidth="1920"
+        Title="Traffic Observer" Height="1080" Width="1920" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Window.Style>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="WindowStyle" Value="None" />
+            <Setter Property="ResizeMode" Value="CanResize" />
+            <Setter Property="AllowsTransparency" Value="True" />
+            <Setter Property="WindowChrome.WindowChrome">
+                <Setter.Value>
+                    <WindowChrome CaptionHeight="0" ResizeBorderThickness="3"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Style>
+    
     <Grid Background="White" Margin="0,0,0,0">
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*"/>
@@ -24,11 +37,8 @@
         <view:MenuView Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,0,0" Width="NaN" Grid.Row="0"/>
         <view:MainView Grid.Row="2" Grid.ColumnSpan="2" Width="NaN" Height="NaN"/>
         <view:LogView Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Grid.RowSpan="2"/>
+        <Rectangle Grid.Row="0" Width="1920" Grid.ColumnSpan="2" Fill="Transparent" MouseDown="Window_PreviewMouseDoubleClick"/>
         <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0" >
-            <StackPanel Height="25" Width="1790">
-                <Border Width="1815" Height="25" MouseDown="RowDefinition_MouseDown">
-                </Border>
-            </StackPanel>
             <Button Width="35" Height="25" Style="{StaticResource minimizeStyle}" Click="Window_minimize"/>
             <Button Width="35" Height="25" Style="{StaticResource shrinkStyle}" Click="Window_shrink"/>
             <Button Width="35" Height="25" Style="{StaticResource closeStyle}" Click="Window_close"/>
