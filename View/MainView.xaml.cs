@@ -224,7 +224,8 @@ namespace TrafficObserver.View
             Ellipse DrawPoint = new Ellipse();
             DrawPoint.Stroke = color;
             DrawPoint.StrokeThickness = 1;
-            DrawPoint.Fill = color;
+            ImageBrush ib = new ImageBrush();
+            DrawPoint.Fill = ib;
             DrawPoint.Width = size;
             DrawPoint.Height = size;
             DrawPoint.HorizontalAlignment = HorizontalAlignment.Center;
