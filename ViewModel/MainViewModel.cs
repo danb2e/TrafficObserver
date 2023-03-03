@@ -200,7 +200,7 @@ namespace TrafficObserver.View
             QueueImageName.Enqueue(VideoDecoder.DecodeNextFrame());
         }
         private void OpenConfigAction(object arg) { NameYOLOConfigFile = (string)arg; }
-        private void OpenWeightAction(object arg) { NameYOLOWeightFile = (string)arg; }
+        private void OpenWeightAction(object arg) { NameYOLOWeightFile = (string)arg;}
         private void OpenNameAction(object arg) { NameYOLOObjectNameFile = (string)arg; }
         private void AddTrackAction(object arg) { NumTrack = (int)arg; trackingPoints.ListEnterTrack.Add(new List<Point>()); trackingPoints.ListExitTrack.Add(new List<Point>()); }
         private void ModeChangeAction(object arg) { int mode = (int)arg; CurMode = (mode == CurMode) ? 0 : mode; }

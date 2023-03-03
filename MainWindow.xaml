@@ -30,13 +30,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="99"/>
+            <RowDefinition Height="31"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <view:MenuView Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,0,0" Width="NaN" Grid.Row="0"/>
-        <view:MainView Grid.Row="2" Grid.ColumnSpan="2" Width="NaN" Height="NaN"/>
-        <view:LogView Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Grid.RowSpan="2"/>
+        <view:MainView Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Width="NaN" Height="NaN"/>
+        <view:MenuView Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0,0,0,0" />
+        <view:LogView Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="0,0,0,0"/>
         <Rectangle Grid.Row="0" Width="1920" Grid.ColumnSpan="2" Fill="Transparent" MouseDown="Window_PreviewMouseDoubleClick"/>
         <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="0" >
             <Button Width="35" Height="25" Style="{StaticResource minimizeStyle}" Click="Window_minimize"/>

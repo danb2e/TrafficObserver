@@ -1,4 +1,5 @@
-﻿using IotechiCore.DataModel;
+﻿using FastYolo.Model;
+using IotechiCore.DataModel;
 using IotechiCore.WPF.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -218,21 +219,25 @@ namespace TrafficObserver.View
             DrawLine.StrokeThickness = thickness;
             MainCanvas.Children.Add(DrawLine);
         }
-        private void DrawPoint(SolidColorBrush color, Point loc, double size)
+        private void DrawPoint(SolidColorBrush color, Point loc, double size, string str)
         {
-            double offset = size / 2.0;
-            Ellipse DrawPoint = new Ellipse();
-            DrawPoint.Stroke = color;
-            DrawPoint.StrokeThickness = 1;
-            ImageBrush ib = new ImageBrush();
-            DrawPoint.Fill = ib;
-            DrawPoint.Width = size;
-            DrawPoint.Height = size;
-            DrawPoint.HorizontalAlignment = HorizontalAlignment.Center;
-            DrawPoint.VerticalAlignment = VerticalAlignment.Center;
-            Canvas.SetLeft(DrawPoint, (loc.X * MainCanvas.ActualWidth) - offset);
-            Canvas.SetTop(DrawPoint, (loc.Y * MainCanvas.ActualHeight) - offset);
-            MainCanvas.Children.Add(DrawPoint);
+                Uri uri = new Uri(" pack://application:,,,/TrafficObserver.UI;component/Style/Images/Pointer/"+ str + ".png");
+                BitmapImage bitmapImage = new BitmapImage(uri);
+                ImageBrush ib = new ImageBrush();
+                ib.ImageSource = bitmapImage;
+
+                double offset = size;
+                Ellipse DrawPoint = new Ellipse();
+                DrawPoint.Stroke = color;
+                DrawPoint.StrokeThickness = 1;
+                DrawPoint.Fill = ib;
+                DrawPoint.Width = 26;
+                DrawPoint.Height = 26;
+                DrawPoint.HorizontalAlignment = HorizontalAlignment.Center;
+                DrawPoint.VerticalAlignment = VerticalAlignment.Center;
+                Canvas.SetLeft(DrawPoint, (loc.X * MainCanvas.ActualWidth) - offset);
+                Canvas.SetTop(DrawPoint, (loc.Y * MainCanvas.ActualHeight) - offset);
+                MainCanvas.Children.Add(DrawPoint);
         }
         private void DrawRectangle(SolidColorBrush color, Rect rect)
         {
@@ -252,7 +257,21 @@ namespace TrafficObserver.View
 
             for (int i=0; i < ListGCP.Count; i++)
             {
-                DrawPoint(Brushes.Red, ListGCP[i], 10.0);
+                Uri uri = new Uri(" pack://application:,,,/TrafficObserver.UI;component/Style/Images/Pointer/point_red.png");
+                BitmapImage bitmapImage = new BitmapImage(uri);
+                ImageBrush ib = new ImageBrush();
+                ib.ImageSource = bitmapImage;
+
+                double offset = 10.0;
+                Ellipse DrawPoint = new Ellipse();
+                DrawPoint.Fill = ib;
+                DrawPoint.Width = 26;
+                DrawPoint.Height = 26;
+                DrawPoint.HorizontalAlignment = HorizontalAlignment.Center;
+                DrawPoint.VerticalAlignment = VerticalAlignment.Center;
+                Canvas.SetLeft(DrawPoint, (ListGCP[i].X * MainCanvas.ActualWidth) - offset);
+                Canvas.SetTop(DrawPoint, (ListGCP[i].Y * MainCanvas.ActualHeight) - offset*2.6);
+                MainCanvas.Children.Add(DrawPoint);
             }
         }
         private void DrawTrackPoints(int num)
@@ -267,8 +286,7 @@ namespace TrafficObserver.View
                     {
                         for (int i = 0; i < ListTrack[j].Count; i++)
                         {
-                            DrawPoint(TrackColor[j], ListTrack[j][i], 10.0);
-
+                            DrawPoint(TrackColor[j], ListTrack[j][i], 10.0, j+1+"");
                             if (i != 0)
                                 DrawLine(ListTrack[j][i - 1], ListTrack[j][i], TrackColor[j], 5.0);
                         }
@@ -283,7 +301,7 @@ namespace TrafficObserver.View
                     List<List<Point>> ListTrack = (l == 0 ? ViewModel.GetListTrack().ListEnterTrack : ViewModel.GetListTrack().ListExitTrack);
                     for (int i = 0; i < ListTrack[num - 1].Count; i++)
                     {
-                        DrawPoint(TrackColor[num - 1], ListTrack[num - 1][i], 10.0);
+                        DrawPoint(TrackColor[num - 1], ListTrack[num - 1][i], 10.0, ViewModel.GetSelectedTrack()+"");
                         if (i != 0)
                             DrawLine(ListTrack[num - 1][i - 1], ListTrack[num - 1][i], TrackColor[num - 1], 5.0);
                     }

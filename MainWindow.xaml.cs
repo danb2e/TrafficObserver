@@ -46,7 +46,6 @@ namespace TrafficObserver
             {
                 this.MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
                 this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
-            //    WindowState = WindowState.Maximized;
             }
         }
         private void Window_close(object sender, RoutedEventArgs e)

@@ -9,47 +9,96 @@
              xmlns:local="clr-namespace:TrafficObserver.View"
              xmlns:view ="clr-namespace:TrafficObserver.View"
              d:DataContext="{d:DesignInstance Type=local:MenuViewModel}"
-             mc:Ignorable="d" Height="129" Width="1920">
-    <Grid Style="{StaticResource topBg}" Margin="0,0,0,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="55"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.22*"/>
-            <ColumnDefinition Width="0.01*"/>
-            <ColumnDefinition Width="0.42*"/>
-            <ColumnDefinition Width="0.01*"/>
-            <ColumnDefinition Width="0.37*"/>
-            <ColumnDefinition Width="0.085*"/>
-            <ColumnDefinition Width="0.015*"/>
-            <ColumnDefinition Width="0.31*"/>
-            <ColumnDefinition Width="0.6*"/>
-            <ColumnDefinition Width="0.01*"/>
-            <ColumnDefinition Width="0.4*"/>
-            <ColumnDefinition Width="0.01*"/>
-        </Grid.ColumnDefinitions>
-        <Image Grid.Row="0" Grid.Column="5" Grid.RowSpan="3" Source="{DynamicResource Top_logo}" Width="60"  HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-        <Image Grid.Row="1" Grid.Column="7" Grid.RowSpan="2" Source="{DynamicResource Top_titleG}" Width="240"  HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <GroupBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Header="파일열기 및 시작" Width="170" Style="{StaticResource groupBox1}"/>
-        <GroupBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Header="설정 열기" HorizontalAlignment="Center" Width="330"  Style="{StaticResource groupBox2}">
-        </GroupBox>
-        <GroupBox Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Header="GPS 및 차선 설정" HorizontalAlignment="Left" Width="200" Style="{StaticResource groupBox5}">
-        </GroupBox>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Center">
-            <Image Source="{DynamicResource Top_line}" Height="80"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" HorizontalAlignment="Center">
-            <Image Source="{DynamicResource Top_line}" Height="80"/>
-        </StackPanel>
-        <GroupBox Grid.Row="1" Grid.Column="8" Grid.RowSpan="3" Header="차로 및 차선 설정" Style="{StaticResource groupBox4}">
-        </GroupBox>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="9" Grid.RowSpan="3" HorizontalAlignment="Center">
-            <Image Source="{DynamicResource Top_line}" Height="80"/>
-        </StackPanel>
-        <GroupBox Grid.Row="1" Grid.Column="10" Grid.RowSpan="3" Header="GCP 추가 및 좌표 변경" Style="{StaticResource groupBox3}"/>
+             mc:Ignorable="d" Height="160" Width="1920">
+    <Grid Margin="0,0,0,0">
+        <Image Source="{DynamicResource Top_t}" VerticalAlignment="Top" />
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Width="310" Margin="0, 15, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="{DynamicResource Top_logo}" Width="60"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Grid.Column="1" Source="{DynamicResource Top_titleG}" Margin="0, 0, 0, -5" Width="240"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="129"/>
+                <RowDefinition Height="31"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="1" Source="{DynamicResource Top_down}" VerticalAlignment="Top" Height="30" MouseLeftButtonDown="TopDown"/>
+        </Grid>
+        <Grid Name="TopU">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="31"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.22*"/>
+                <ColumnDefinition Width="0.01*"/>
+                <ColumnDefinition Width="0.42*"/>
+                <ColumnDefinition Width="0.01*"/>
+                <ColumnDefinition Width="0.37*"/>
+                <ColumnDefinition Width="0.085*"/>
+                <ColumnDefinition Width="0.015*"/>
+                <ColumnDefinition Width="0.31*"/>
+                <ColumnDefinition Width="0.6*"/>
+                <ColumnDefinition Width="0.01*"/>
+                <ColumnDefinition Width="0.4*"/>
+                <ColumnDefinition Width="0.01*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="12" Source="{DynamicResource Top_u}" VerticalAlignment="Bottom"/>
+
+            <GroupBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Header="파일열기 및 시작" Width="170" Style="{StaticResource groupBox1}"/>
+            <GroupBox Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Header="설정 열기" HorizontalAlignment="Center" Width="330">
+                <GroupBox.Style>
+                    <Style TargetType="GroupBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="GroupBox">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="18"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.1*"/>
+                                            <ColumnDefinition Width="0.8*"/>
+                                            <ColumnDefinition Width="1.2*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="0.1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ContentPresenter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  Margin="4" ContentSource="Header" RecognizesAccessKey="True" HorizontalAlignment="Center"/>
+                                        <ToggleButton Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="80" Command="{Binding OpenWeight}" Style="{DynamicResource btnStateStyle1}"/>
+                                        <ToggleButton Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="110" Command="{Binding OpenConfig}" Style="{DynamicResource btnStateStyle2}"/>
+                                        <ToggleButton Grid.Column="3" Grid.Row="2" VerticalAlignment="Top" Height="25" Width="100" Command="{Binding OpenName}" Style="{DynamicResource btnStateStyle3}"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </GroupBox.Style>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Grid.Column="4" Grid.RowSpan="3" Header="GPS 및 차선 설정" HorizontalAlignment="Left" Width="200" Style="{StaticResource groupBox5}">
+            </GroupBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Center">
+                <Image Source="{DynamicResource Top_line}" Height="80"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" HorizontalAlignment="Center">
+                <Image Source="{DynamicResource Top_line}" Height="80"/>
+            </StackPanel>
+            <GroupBox Grid.Row="1" Grid.Column="8" Grid.RowSpan="3" Header="차로 및 차선 설정" Style="{StaticResource groupBox4}">
+            </GroupBox>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="9" Grid.RowSpan="3" HorizontalAlignment="Center">
+                <Image Source="{DynamicResource Top_line}" Height="80"/>
+            </StackPanel>
+            <GroupBox Grid.Row="1" Grid.Column="10" Grid.RowSpan="3" Header="GCP 추가 및 좌표 변경" Style="{StaticResource groupBox3}"/>
+        </Grid>
 
     </Grid>
 </shell:ViewBaseUserControl>

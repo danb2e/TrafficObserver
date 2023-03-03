@@ -25,5 +25,17 @@ namespace TrafficObserver.View
         {
             InitializeComponent();
         }
+
+        private void TopDown(object sender, MouseButtonEventArgs e)
+        {
+            if(TopU.Visibility == Visibility.Visible)
+            {
+                TopU.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                TopU.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

@@ -68,7 +68,6 @@ namespace TrafficObserver.View
 
         int curMode;
         #endregion
-
         public MenuViewModel()
         {
             #region Initialization
@@ -89,7 +88,6 @@ namespace TrafficObserver.View
             OpenWeight = new RelayCommand(new Action(OpenWeightAction));
             OpenConfig = new RelayCommand(new Action(OpenConfigAction));
             OpenName = new RelayCommand(new Action(OpenNameAction));
-
             StartPauseTrajactory = new RelayCommand(new Action(StartPauseTrajactoryAction));
 
             DecodedImageFolder = Directory.GetCurrentDirectory() + @"\DecodedFrames";
@@ -186,7 +184,9 @@ namespace TrafficObserver.View
                 Mediator.Mediator.Instance().Distribute("OpenWeightAction", ofd.FileName);
             }
             else
+            {
                 System.Windows.MessageBox.Show("파일이 선택되지 않았습니다. 다시 시도해주세요.", "에러 메시지", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
         private void OpenConfigAction()
         {
